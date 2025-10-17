@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Portafolio Gabriel — React + TypeScript + Vite + Karma/Jasmine
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un portafolio con las secciones requeridas: Inicio, Sobre mí, Proyectos y Contacto. Usa React + TypeScript con Vite, y pruebas unitarias con Karma + Jasmine.
 
-Currently, two official plugins are available:
+## Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Desarrollo: inicia el servidor con recarga en caliente.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Build de producción: genera la carpeta `dist`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+npm run build
 ```
+
+- Previsualización del build:
+
+```powershell
+npm run preview
+```
+
+- Pruebas unitarias (Karma + Jasmine):
+
+```powershell
+npm test
+```
+
+- Pruebas en watch (útil durante desarrollo):
+
+```powershell
+npm run test:watch
+```
+
+## Estructura de secciones
+
+- `src/sections/Inicio.tsx` — Bienvenida y descripción corta.
+- `src/sections/SobreMi.tsx` — Perfil y habilidades.
+- `src/sections/Proyectos.tsx` — Lista simple de proyectos.
+- `src/sections/Contacto.tsx` — Formulario básico (sin backend).
+
+Navegación simple incluida en `src/components/Navbar.tsx`; se monta en `src/App.tsx`.
+
+## Pruebas
+
+- `src/App.test.tsx` — Verifica navegación Inicio → Contacto.
+- `src/sections/Contacto.test.tsx` — Verifica envío del formulario y mensaje de confirmación.
+
+Karma está configurado en `karma.conf.mjs` con `esbuild` para compilar TypeScript/TSX.
+
+## Notas
+
+- Se usa ChromeHeadless para ejecutar las pruebas.
+- Si Chrome no está instalado, instala Google Chrome o ajusta el `browsers` en `karma.conf.mjs`.
+
