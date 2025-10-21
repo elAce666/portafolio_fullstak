@@ -162,13 +162,13 @@ export default function Inicio() {
             <a href="https://linkedin.com/in/gabrielmayorga" target="_blank" rel="noopener noreferrer" title="LinkedIn" style={{ fontSize: '2rem', transition: 'all 0.3s' }}>
               <span role="img" aria-label="LinkedIn">💼</span>
             </a>
-            <a href="mailto:gabriel@email.com" title="Email" style={{ fontSize: '2rem', transition: 'all 0.3s' }}>
+            <a href="mailto:ga.mayorga@duocuc.cl" title="Email" style={{ fontSize: '2rem', transition: 'all 0.3s' }}>
               <span role="img" aria-label="Email">✉️</span>
             </a>
           </div>
         </div>
         <img
-          src="/yo.jpg?v=2"
+          src="/yololo.png"
           alt="Gabriel Mayorga - Foto profesional"
           className="inicio-foto"
         />

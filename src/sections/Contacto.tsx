@@ -97,7 +97,14 @@ export default function Contacto() {
                 <span style={{ fontSize: '1.5rem' }}>✉️</span>
                 <div>
                   <div style={{ fontSize: '0.85rem', color: '#c9a961' }}>Email</div>
-                  <div style={{ fontWeight: 600, color: '#ffffff' }}>tu_email@example.com</div>
+                  <a href="mailto:ga.mayorga@duocuc.cl" style={{ fontWeight: 600, color: '#ffffff', textDecoration: 'none' }}>ga.mayorga@duocuc.cl</a>
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <span style={{ fontSize: '1.5rem' }}>📱</span>
+                <div>
+                  <div style={{ fontSize: '0.85rem', color: '#c9a961' }}>Teléfono</div>
+                  <a href="tel:+56967131917" style={{ fontWeight: 600, color: '#ffffff', textDecoration: 'none' }}>+56 9 6713 1917</a>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

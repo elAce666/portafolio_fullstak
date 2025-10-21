@@ -33,19 +33,28 @@ export default function SobreMi() {
         {/* Perfil lateral */}
         <div style={{ flex: '0 0 250px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
           <div style={{ 
-            width: 140, 
-            height: 140, 
+            width: 180, 
+            height: 180, 
             borderRadius: '50%', 
             background: 'linear-gradient(135deg, #c9a961 0%, #f4e5c2 50%, #c9a961 100%)', 
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center', 
-            fontSize: '4rem', 
-            color: '#0a0a0a', 
             boxShadow: '0 8px 32px rgba(201, 169, 97, 0.5)',
-            border: '3px solid rgba(10, 10, 10, 0.5)'
+            border: '4px solid #0a0a0a',
+            overflow: 'hidden',
+            position: 'relative'
           }}>
-            👤
+            <img 
+              src="/yololo.png" 
+              alt="Gabriel Mayorga"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center top'
+              }}
+            />
           </div>
           <h3 style={{ 
             color: '#ffffff', 
